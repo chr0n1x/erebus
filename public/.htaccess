@@ -1,0 +1,14 @@
+# Configured for Apache 2.2.25
+# Arch
+
+# Your module name may be different
+<IfModule rewrite_module>
+  Options -MultiViews
+  RewriteEngine On
+  RewriteBase      /
+  RewriteCond      %{REQUEST_FILENAME} !-f
+  RewriteCond      %{REQUEST_FILENAME} !-d
+  RewriteRule      ^(.*)$              index.php/$1 [QSA]
+  # this is specific to Apache >= 2.2.16
+  FallbackResource /index.php
+</IfModule>

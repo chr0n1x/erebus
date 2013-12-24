@@ -1,0 +1,15 @@
+{
+    "name": "chr0n1x/nox",
+    "description": "personal blog / site",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Ran",
+            "email": "heilong24@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "silex/silex": "1.1.2"
+    }
+}

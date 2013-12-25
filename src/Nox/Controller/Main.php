@@ -6,7 +6,7 @@ use Nox\Controller;
 
 class Main extends Controller {
 
-  const ACTION = 'process';
+  const ACTION = 'v1/process';
 
   /**
    * {@inheritDoc}

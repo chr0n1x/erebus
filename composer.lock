@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5a88f75323c62d4e9b4742acfae7c013",
+    "hash": "03e82c9ead5d64383058f68e5f13b49c",
     "packages": [
         {
             "name": "hoffmann/silex-view",

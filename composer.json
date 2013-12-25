@@ -10,6 +10,13 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "silex/silex": "1.1.2"
+        "silex/silex": "1.1.2",
+        "hoffmann/silex-view": "dev-master",
+        "twig/twig": ">=1.2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nox": "src"
+        }
     }
 }

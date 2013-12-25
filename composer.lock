@@ -3,8 +3,56 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c068fe3f93d4ee2d1b066286d1c1e72d",
+    "hash": "bb59831e087cc5df32224f9164e14aa0",
     "packages": [
+        {
+            "name": "hoffmann/silex-view",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hoffmann/Silex-View.git",
+                "reference": "0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hoffmann/Silex-View/zipball/0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
+                "reference": "0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "silex/silex": "*",
+                "twig/twig": ">=1.2.0"
+            },
+            "suggest": {
+                "twig/twig": ">=1.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SilexView": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Hoffmann",
+                    "email": "ph@peter-hoffmann.com",
+                    "homepage": "http://peter-hoffmann.com/"
+                }
+            ],
+            "description": "Generic Views for Silex",
+            "homepage": "https://github.com/hoffmann/Silex-View",
+            "keywords": [
+                "silex"
+            ],
+            "time": "2013-01-26 19:17:23"
+        },
         {
             "name": "pimple/pimple",
             "version": "1.1.x-dev",
@@ -473,6 +521,55 @@
                 "url"
             ],
             "time": "2013-11-22 17:42:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "6387fc457792f38189bdd5729b500772bbddfa4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/6387fc457792f38189bdd5729b500772bbddfa4d",
+                "reference": "6387fc457792f38189bdd5729b500772bbddfa4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.15-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-12-10 10:23:00"
         }
     ],
     "packages-dev": [
@@ -482,9 +579,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "hoffmann/silex-view": 20
+    },
     "platform": [
 
     ],

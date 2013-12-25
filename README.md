@@ -1,7 +1,7 @@
 nox
 ===
 
-Not even close to *ready*! Use with caution, and no expectations whatsoever.
+Not even close to ready! Use with caution, and no expectations whatsoever.
 
 * A very simple (ie: hacky) web application for STT-to-commands.
 * Heavily influenced by [cranklin/Jarvis](https://github.com/cranklin/Jarvis)

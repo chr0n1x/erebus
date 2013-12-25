@@ -10,9 +10,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "silex/silex": "1.1.2",
         "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
-        "twig/twig": ">=1.2.0"
+        "silex/silex": "1.1.2",
+        "twig/twig": ">=1.2.0",
+        "monolog/monolog": "1.7.0"
     },
     "autoload": {
         "psr-0": {

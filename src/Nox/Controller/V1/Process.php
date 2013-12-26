@@ -26,14 +26,17 @@ class Process extends BaseView {
     $res = ( new Wolfram( '/v2/query' ) )
            ->ask( $text );
 
+    if ( empty( $res ) ) {
+      $res = 'Wolfram alpha failed to return a response, sorry.';
+    }
+
     $app['monolog']->addInfo( "Response: [ {$res} ]" );
 
     $audio = ( new GoogleTTS( '/translate_tts' ) )
              ->textToSpeech( $res );
 
-    $response = new Response;
+    $response = new Response( $audio, Response::HTTP_OK );
 
-    $response->setContent( $audio );
     $response->headers->set( 'Content-Type', 'audio/mpeg' );
     $response->headers->set( 'Cache-Control', 'no-cache' );
 

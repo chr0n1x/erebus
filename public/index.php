@@ -18,5 +18,5 @@ foreach ( $configs as $file ) {
 }
 
 $app->get('/', Nox\Controller\Main::asView());
-$app->post('/v1/process', Nox\Controller\V1\Process::asView());
+$app->get('/v1/process', Nox\Controller\V1\Process::asView());
 $app->run();

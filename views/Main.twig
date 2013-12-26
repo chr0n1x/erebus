@@ -1,17 +1,18 @@
 <html>
   <head>
     <title>.: NOX :.</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-    function submitAndClear(){
-      if(document.getElementById('speechinput').value != ""){
-        document.noxForm.submit();
-        document.getElementById('speechinput').value = "";
+      function submitAndClear(){
+        if ($('#speechinput').val() != "") {
+          $('#noxForm').submit();
+          $('#speechinput').val("")
+        }
       }
-    }
     </script>
   </head>
   <body>
-    <form method="post" name="noxForm" id="noxForm" action="{{ action }}" target="voiceframe">
+    <form method="get" name="noxForm" id="noxForm" action="{{ action }}" target="voiceframe">
       <input name="speechinput" id="speechinput" type="text" onFocus="submitAndClear(this);" style="width:20px;" x-webkit-speech />
       <!--input type="submit" value="ASK" /-->
     </form>

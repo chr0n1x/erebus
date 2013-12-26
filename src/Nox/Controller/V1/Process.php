@@ -3,30 +3,41 @@
 namespace Nox\Controller\V1;
 
 use Nox\Controller;
+use Nox\Requester\GoogleTTS;
 use Nox\Requester\Wolfram;
 use Silex\Application;
+use SilexView\BaseView;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Process extends Controller {
+class Process extends BaseView {
 
   const PARAM = 'speechinput';
 
   /**
    * {@inheritDoc}
    */
-  function post( Request $req, Application $app ) {
+  function get( Request $req, Application $app ) {
 
     $text = $req->get( self::PARAM );
 
-    $app['monolog']->addInfo( "input query '{$text}'" );
+    $app['monolog']->addInfo( "Query: [ {$text} ]" );
 
     $res = ( new Wolfram( '/v2/query' ) )
            ->ask( $text );
 
-    $app['monolog']->addInfo( "Question asked: [ {$text} ], Response: [ {$res} ]; getting audio ..." );
+    $app['monolog']->addInfo( "Response: [ {$res} ]" );
 
-    return new Response( $res, Response::HTTP_OK );
+    $audio = ( new GoogleTTS( '/translate_tts' ) )
+             ->textToSpeech( $res );
+
+    $response = new Response;
+
+    $response->setContent( $audio );
+    $response->headers->set( 'Content-Type', 'audio/mpeg' );
+    $response->headers->set( 'Cache-Control', 'no-cache' );
+
+    return $response;
 
   } // process
 

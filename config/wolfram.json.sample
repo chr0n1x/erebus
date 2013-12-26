@@ -1,0 +1,7 @@
+{
+    "wolfram": {
+        "appid": "YOUR_APP_ID",
+        "format": "plaintext",
+        "podtitle": "Result"
+    }
+}

@@ -10,6 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "igorw/config-service-provider": "dev-master#8ccf0f6e9324629720c58fa071e74dbd2501f437",
         "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
         "nategood/httpful": "dev-master#3fae8a1dd30d49cc5b9c1371a2fc94166e943f2a",
         "silex/silex": "1.1.2",

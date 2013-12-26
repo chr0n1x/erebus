@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7ceffea9926202bafcc44244cefe2537",
+    "hash": "16e6cf482c19f9dafc809e4db9114c72",
     "packages": [
         {
             "name": "hoffmann/silex-view",
@@ -52,6 +52,63 @@
                 "silex"
             ],
             "time": "2013-01-26 19:17:23"
+        },
+        {
+            "name": "igorw/config-service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/ConfigServiceProvider.git",
+                "reference": "8ccf0f6e9324629720c58fa071e74dbd2501f437"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/8ccf0f6e9324629720c58fa071e74dbd2501f437",
+                "reference": "8ccf0f6e9324629720c58fa071e74dbd2501f437",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~1.0"
+            },
+            "require-dev": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Igorw\\Silex": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
+                }
+            ],
+            "description": "A config ServiceProvider for Silex with support for php, json and yaml.",
+            "keywords": [
+                "silex"
+            ],
+            "time": "2013-10-30 14:42:08"
         },
         {
             "name": "monolog/monolog",
@@ -697,6 +754,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "igorw/config-service-provider": 20,
         "hoffmann/silex-view": 20,
         "nategood/httpful": 20
     },

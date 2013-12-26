@@ -45,12 +45,11 @@ abstract class Requester {
   private $_methods;
 
   /**
-   * @param  string      $endpoint   Cross-checked with $this->_endpoints
    * @param  array       $cfg        Anything special that needs to be merged
    *                                 into $this->_queryParams
    * @throws \Exception              When the endpoint url is invalid
    */
-  public function __construct( $endpoint, $cfg = array() ) {
+  public function __construct( $cfg = array() ) {
 
     $this->_baseUrl = $this->_protocol.'://'.$this->_baseUrl;
 
@@ -62,7 +61,6 @@ abstract class Requester {
     $methods = array_map( 'strtolower', $methods );
 
     $this->_methods     = $methods;
-    $this->_url         = $this->_buildEndpointUrl( $endpoint );
     $this->_queryParams = array_merge( $this->_queryParams, $cfg );
 
   } // __construct

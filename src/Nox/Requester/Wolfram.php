@@ -8,10 +8,11 @@ use TheSeer\fDOM\fDOMDocument;
 class Wolfram extends Requester {
 
   const ERROR_MESSAGE = 'Wolfram Alpha returned an empty answer';
+  const QUERY_EP      = '/v2/query';
 
   protected $_protocol = 'http';
   protected $_endpoints = array(
-      '/v2/query'
+      self::QUERY_EP
   );
   protected $_baseUrl = 'api.wolframalpha.com';
 
@@ -29,7 +30,8 @@ class Wolfram extends Requester {
 
     $this->_queryParams['input'] = $query;
 
-    $url = $this->_url . $this->_buildQueryStream( $this->_queryParams );
+    $url = $this->_buildEndpointUrl( self::QUERY_EP )
+           . $this->_buildQueryStream( $this->_queryParams );
     $res = $this->get( $url )
                 ->send();
     $res = (string)$res;

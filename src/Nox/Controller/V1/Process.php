@@ -23,17 +23,15 @@ class Process extends BaseView {
 
     $app['monolog']->addInfo( "Query: [ {$text} ]" );
 
-    $res = ( new Wolfram( '/v2/query' ) )
-           ->ask( $text );
+    $res = ( new Wolfram )->ask( $text );
 
     if ( empty( $res ) ) {
-      $res = 'Wolfram alpha failed to return a response, sorry.';
+      $res = "Sorry, I couldn't find a short answer for that question. Google it.";
     }
 
     $app['monolog']->addInfo( "Response: [ {$res} ]" );
 
-    $audio = ( new GoogleTTS( '/translate_tts' ) )
-             ->textToSpeech( $res );
+    $audio = ( new GoogleTTS )->textToSpeech( $res );
 
     $response = new Response( $audio, Response::HTTP_OK );
 

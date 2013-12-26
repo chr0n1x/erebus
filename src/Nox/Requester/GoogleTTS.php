@@ -6,8 +6,10 @@ use Nox\Requester;
 
 class GoogleTTS extends Requester {
 
+  const TRANSLATE_EP = '/translate_tts';
+
   protected $_endpoints = array(
-      '/translate_tts'
+      self::TRANSLATE_EP
   );
   protected $_baseUrl = 'translate.google.com';
 
@@ -15,13 +17,8 @@ class GoogleTTS extends Requester {
    * @array
    */
   protected $_queryParams = array(
-      'ie'      => 'UTF-8',
-      'total'   => 1,
       'tl'      => 'en',
-      'idx'     => 0,
-      'prev'    => 'input',
-      'q'       => '',
-      'textlen' => 0
+      'q'       => ''
   );
 
   public function textToSpeech( $text ) {
@@ -29,7 +26,8 @@ class GoogleTTS extends Requester {
     $this->_queryParams['q']       = $text;
     $this->_queryParams['textlen'] = strlen( $text );
 
-    $url = $this->_url . $this->_buildQueryStream( $this->_queryParams );
+    $url = $this->_buildEndpointUrl( self::TRANSLATE_EP )
+           . $this->_buildQueryStream( $this->_queryParams );
 
     return file_get_contents( $url );
 

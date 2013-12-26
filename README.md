@@ -14,6 +14,11 @@ Via [Composer](http://getcomposer.org/doc/00-intro.md#globally)!
 composer install
 ```
 
+**Get a Wolfram Alpha App ID**
+
+- [Obtaining AppID](http://products.wolframalpha.com/api/documentation.html#1)
+- create a `wolfram.json` in the `config` directory; format your config to look like [`config/wolfram.json.sample`](https://github.com/chr0n1x/nox/blob/master/config/wolfram.json.sample)
+
 **Running**
 
 You can either have this application get served by Apache, or in `public`

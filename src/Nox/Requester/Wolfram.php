@@ -17,8 +17,6 @@ class Wolfram extends Requester {
 
   /**
    * @array
-   * Stores params that are used to build the query stream
-   * Order matters!
    */
   protected $_queryParams = array(
       'appid'     => null,

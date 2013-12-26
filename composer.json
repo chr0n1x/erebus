@@ -11,6 +11,7 @@
     "minimum-stability": "dev",
     "require": {
         "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
+        "nategood/httpful": "dev-master#3fae8a1dd30d49cc5b9c1371a2fc94166e943f2a",
         "silex/silex": "1.1.2",
         "twig/twig": ">=1.2.0",
         "monolog/monolog": "1.7.0"

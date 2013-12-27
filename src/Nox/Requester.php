@@ -87,7 +87,7 @@ class Requester {
    */
   public function setRequestUrl( $url ) {
 
-    $url = preg_replace( '/^(http)[s]*:\/\//', '', $url );
+    $url = preg_replace( '/^[(http)[s]*]*(:\/\/)/', '', $url );
 
     $this->_baseUrl = $this->_protocol.'://'.$url;
 

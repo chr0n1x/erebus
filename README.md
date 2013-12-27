@@ -1,4 +1,4 @@
-nox
+nox [![Build Status](https://travis-ci.org/chr0n1x/nox.png?branch=master)](https://travis-ci.org/chr0n1x/nox)
 ===
 
 Not even close to ready! Use with caution, and no expectations whatsoever.

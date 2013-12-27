@@ -50,12 +50,14 @@ class RequesterTest extends TestCase {
     $this->assertEquals( 'https://blah.com', $this->_instance->setRequestUrl( 'blah.com' ) );
     $this->assertEquals( 'https://blah.com', $this->_instance->setRequestUrl( 'http://blah.com' ) );
     $this->assertEquals( 'https://blah.com', $this->_instance->setRequestUrl( 'https://blah.com' ) );
+    $this->assertEquals( 'https://blah.com', $this->_instance->setRequestUrl( 'httpshttp://blah.com' ) );
 
     $this->_instance->setSsl( false );
 
     $this->assertEquals( 'http://blah.com', $this->_instance->setRequestUrl( 'blah.com' ) );
     $this->assertEquals( 'http://blah.com', $this->_instance->setRequestUrl( 'http://blah.com' ) );
     $this->assertEquals( 'http://blah.com', $this->_instance->setRequestUrl( 'https://blah.com' ) );
+    $this->assertEquals( 'http://blah.com', $this->_instance->setRequestUrl( 'httpshttp://blah.com' ) );
 
 
   } // requestUrlWorks

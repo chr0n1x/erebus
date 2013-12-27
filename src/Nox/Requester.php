@@ -4,7 +4,7 @@ namespace Nox;
 
 use Httpful\Http;
 
-abstract class Requester {
+class Requester {
 
   /**
    * @string
@@ -51,12 +51,6 @@ abstract class Requester {
    */
   public function __construct( $cfg = array() ) {
 
-    $this->_baseUrl = $this->_protocol.'://'.$this->_baseUrl;
-
-    if ( empty( $this->_baseUrl ) ) {
-      throw new \Exception( "Invalid URL: {$this->_baseUrl}" );
-    }
-
     $methods = array_merge( Http::safeMethods(), Http::idempotentMethods() );
     $methods = array_map( 'strtolower', $methods );
 
@@ -73,6 +67,12 @@ abstract class Requester {
    */
   public function __call( $fx, $args ) {
 
+    if ( empty( $this->_baseUrl ) ) {
+      throw new \Exception( "Empty base URL" );
+    }
+
+    $this->setRequestUrl( $this->_baseUrl );
+
     if ( !in_array( $fx, $this->_methods ) ) {
       throw new \Exception( "Unknown method [{$fx}]" );
     }
@@ -80,6 +80,34 @@ abstract class Requester {
     return call_user_func_array( array( 'Httpful\Request', $fx ), $args );
 
   } // __call
+
+  /**
+   * Set base param for request URL
+   * @param string  $url
+   */
+  public function setRequestUrl( $url ) {
+
+    $url = preg_replace( '/^(http)[s]*:\/\//', '', $url );
+
+    $this->_baseUrl = $this->_protocol.'://'.$url;
+
+    return $this->_baseUrl;
+
+  } // setRequestUrl
+
+  /**
+   * Set protocol
+   * @param bool  $secure
+   */
+  public function setSsl( $secure = true ) {
+
+    $this->_protocol = ( $secure )
+                       ? 'https'
+                       : 'http';
+
+    return $this->_protocol;
+
+  } // setSsl
 
   /**
    * @param  array $params  Keys = variable names, Values = values
@@ -117,7 +145,8 @@ abstract class Requester {
       throw new \Exception( "Unknown endpoint {$endpoint}" );
     }
 
-    return $this->_baseUrl . $endpoint;
+    // force reset of protocol
+    return $this->setRequestUrl( $this->_baseUrl ) . $endpoint;
 
   } // _buildEndpointUrl
 

@@ -8,7 +8,7 @@ use SilexView\TemplateView;
  * Nox\Controller
  * Base wrapper for SilexView\TemplateView
  */
-abstract class Controller extends TemplateView {
+class Controller extends TemplateView {
 
   /**
    * @param   Symfony\Component\HttpFoundation\Request

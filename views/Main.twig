@@ -1,18 +1,18 @@
 <html>
   <head>
-    <title>.: NOX :.</title>
+    <title>.: EREBUS :.</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
       function submitAndClear(){
         if ($('#speechinput').val() != "") {
-          $('#noxForm').submit();
+          $('#erebusForm').submit();
           $('#speechinput').val("")
         }
       }
     </script>
   </head>
   <body>
-    <form method="get" name="noxForm" id="noxForm" action="{{ action }}" target="voiceframe">
+    <form method="get" name="erebusForm" id="erebusForm" action="{{ action }}" target="voiceframe">
       <input name="speechinput" id="speechinput" type="text" onFocus="submitAndClear(this);" style="width:20px;" x-webkit-speech />
       <!--input type="submit" value="ASK" /-->
     </form>

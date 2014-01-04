@@ -23,7 +23,7 @@ class Process extends BaseView {
 
     $app['monolog']->addInfo( "Query: [ {$text} ]" );
 
-    $res = ( new Wolfram )->ask( $text );
+    $res = ( new Wolfram( $app['wolfram'] ) )->ask( $text );
 
     if ( empty( $res ) ) {
       $res = "Sorry, I couldn't find a short answer for that question. Google it.";

@@ -1,11 +1,11 @@
-nox [![Build Status](https://travis-ci.org/chr0n1x/nox.png?branch=master)](https://travis-ci.org/chr0n1x/nox)
+[Erebus](http://en.wikipedia.org/wiki/Erebus) [![Build Status](https://travis-ci.org/chr0n1x/nox.png?branch=master)](https://travis-ci.org/chr0n1x/nox)
 ===
 
 Not even close to ready! Use with caution, and no expectations whatsoever.
 
 * A very simple (ie: hacky) web application for STT-to-commands.
 * Heavily influenced by [cranklin/Jarvis](https://github.com/cranklin/Jarvis)
-* Built, with love, on Silex
+* Built, with love, on [Silex](https://github.com/silexphp/Silex)
 
 **Installation**
 

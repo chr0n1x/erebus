@@ -2,6 +2,6 @@
 error_reporting( E_ALL );
 
 $loader = require __DIR__.'/../vendor/autoload.php';
-$loader->add('Nox\Test', __DIR__);
+$loader->add('Erebus\Test', __DIR__);
 
-require __DIR__.'/Nox/TestCase.php';
+require __DIR__.'/Erebus/TestCase.php';

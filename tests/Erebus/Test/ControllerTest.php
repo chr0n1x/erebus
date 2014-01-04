@@ -1,9 +1,9 @@
 <?php
 
-namespace Nox\Test;
+namespace Erebus\Test;
 
-use Nox\TestCase;
-use Nox\Controller;
+use Erebus\TestCase;
+use Erebus\Controller;
 
 class ControllerTest extends TestCase {
 

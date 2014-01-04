@@ -2,7 +2,7 @@
 
 namespace Erebus\Requester;
 
-use Erebus\Requester;
+use Nyx\Requester;
 
 class GoogleTTS extends Requester {
 

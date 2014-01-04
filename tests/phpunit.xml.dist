@@ -17,7 +17,7 @@
 
   <testsuites>
     <testsuite>
-      <directory suffix=".php">./Nox/</directory>
+      <directory suffix=".php">./Erebus/</directory>
     </testsuite>
   </testsuites>
 

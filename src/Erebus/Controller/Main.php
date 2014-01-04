@@ -1,8 +1,8 @@
 <?php
 
-namespace Nox\Controller;
+namespace Erebus\Controller;
 
-use Nox\Controller;
+use Erebus\Controller;
 
 class Main extends Controller {
 
@@ -17,4 +17,4 @@ class Main extends Controller {
 
   } // getContextData
 
-} // Nox\Controller\Main
+} // Erebus\Controller\Main

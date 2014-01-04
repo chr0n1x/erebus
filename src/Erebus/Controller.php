@@ -1,11 +1,11 @@
 <?php
 
-namespace Nox;
+namespace Erebus;
 
 use SilexView\TemplateView;
 
 /**
- * Nox\Controller
+ * Erebus\Controller
  * Base wrapper for SilexView\TemplateView
  */
 class Controller extends TemplateView {
@@ -22,4 +22,4 @@ class Controller extends TemplateView {
 
   } // getContextData
 
-} // Nox\Controller
+} // Erebus\Controller

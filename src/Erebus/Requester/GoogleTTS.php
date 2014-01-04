@@ -1,8 +1,8 @@
 <?php
 
-namespace Nox\Requester;
+namespace Erebus\Requester;
 
-use Nox\Requester;
+use Erebus\Requester;
 
 class GoogleTTS extends Requester {
 
@@ -33,4 +33,4 @@ class GoogleTTS extends Requester {
 
   } // textToSpeech
 
-} // Nox\Requester\GoogleTTS
+} // Erebus\Requester\GoogleTTS

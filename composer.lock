@@ -3,24 +3,25 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f516f550c62bc542326b73b1e5a8c771",
+    "hash": "40a37bd54b01399baf2ae5605d207775",
     "packages": [
         {
             "name": "chr0n1x/nyx",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chr0n1x/nyx.git",
-                "reference": "267d210e297f4567c91a925f14d0abbd88e21ad8"
+                "reference": "b2d79518be2933f29e17408b3a7cda6ce1bfdb59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chr0n1x/nyx/zipball/267d210e297f4567c91a925f14d0abbd88e21ad8",
-                "reference": "267d210e297f4567c91a925f14d0abbd88e21ad8",
+                "url": "https://api.github.com/repos/chr0n1x/nyx/zipball/b2d79518be2933f29e17408b3a7cda6ce1bfdb59",
+                "reference": "b2d79518be2933f29e17408b3a7cda6ce1bfdb59",
                 "shasum": ""
             },
             "require": {
-                "nategood/httpful": "dev-master#3fae8a1dd30d49cc5b9c1371a2fc94166e943f2a"
+                "nategood/httpful": "dev-master#3fae8a1dd30d49cc5b9c1371a2fc94166e943f2a",
+                "theseer/fdomdocument": "1.4.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.28"
@@ -42,7 +43,7 @@
                 }
             ],
             "description": "Collection of semantic tools",
-            "time": "2014-01-04 06:11:12"
+            "time": "2014-01-04 22:44:34"
         },
         {
             "name": "hoffmann/silex-view",

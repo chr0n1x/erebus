@@ -10,11 +10,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "chr0n1x/nyx": "1.0.0",
+        "chr0n1x/nyx": "1.1.0",
         "silex/silex": "1.1.2",
         "twig/twig": ">=1.2.0",
         "monolog/monolog": "1.7.0",
-        "theseer/fdomdocument": "1.4.3",
         "igorw/config-service-provider": "dev-master#8ccf0f6e9324629720c58fa071e74dbd2501f437",
         "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3"
     },

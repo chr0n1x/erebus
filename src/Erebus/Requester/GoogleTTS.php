@@ -26,8 +26,7 @@ class GoogleTTS extends Requester {
     $this->_queryParams['q']       = $text;
     $this->_queryParams['textlen'] = strlen( $text );
 
-    $url = $this->_buildEndpointUrl( self::TRANSLATE_EP )
-           . $this->_buildQueryStream( $this->_queryParams );
+    $url = $this->_buildRequestUrl( self::TRANSLATE_EP );
 
     return file_get_contents( $url );
 

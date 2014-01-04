@@ -1,10 +1,10 @@
 <?php
 
-namespace Nox\Controller\V1;
+namespace Erebus\Controller\V1;
 
-use Nox\Controller;
-use Nox\Requester\GoogleTTS;
-use Nox\Requester\Wolfram;
+use Erebus\Controller;
+use Erebus\Requester\GoogleTTS;
+use Nyx\Requester\Wolfram;
 use Silex\Application;
 use SilexView\BaseView;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,4 +42,4 @@ class Process extends BaseView {
 
   } // process
 
-} // Nox\Controller\V1\Process
+} // Erebus\Controller\V1\Process

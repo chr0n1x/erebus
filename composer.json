@@ -1,5 +1,5 @@
 {
-    "name": "chr0n1x/nox",
+    "name": "chr0n1x/erebus",
     "description": "STTTC-xtravaganza",
     "license": "MIT",
     "authors": [
@@ -10,20 +10,20 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "igorw/config-service-provider": "dev-master#8ccf0f6e9324629720c58fa071e74dbd2501f437",
-        "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3",
-        "nategood/httpful": "dev-master#3fae8a1dd30d49cc5b9c1371a2fc94166e943f2a",
+        "chr0n1x/nyx": "1.0.0",
         "silex/silex": "1.1.2",
         "twig/twig": ">=1.2.0",
         "monolog/monolog": "1.7.0",
-        "theseer/fdomdocument": "1.4.3"
+        "theseer/fdomdocument": "1.4.3",
+        "igorw/config-service-provider": "dev-master#8ccf0f6e9324629720c58fa071e74dbd2501f437",
+        "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"
     },
     "autoload": {
         "psr-0": {
-            "Nox": "src"
+            "Erebus": "src"
         }
     }
 }

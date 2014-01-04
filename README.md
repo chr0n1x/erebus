@@ -1,4 +1,4 @@
-[Erebus](http://en.wikipedia.org/wiki/Erebus) [![Build Status](https://travis-ci.org/chr0n1x/nox.png?branch=master)](https://travis-ci.org/chr0n1x/nox)
+[Erebus](http://en.wikipedia.org/wiki/Erebus) [![Build Status](https://travis-ci.org/chr0n1x/erebus.png?branch=master)](https://travis-ci.org/chr0n1x/erebus)
 ===
 
 Not even close to ready! Use with caution, and no expectations whatsoever.

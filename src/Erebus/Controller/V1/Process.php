@@ -23,7 +23,12 @@ class Process extends BaseView {
 
     $app['monolog']->addInfo( "Query: [ {$text} ]" );
 
-    $res = ( new Wolfram( $app['wolfram'] ) )->ask( $text );
+    try {
+      $res = ( new Wolfram( $app['wolfram'] ) )->ask( $text );
+    }
+    catch( \InvalidArgumentException $e ) {
+      $res = 'I do not have a valid wolfram configuration, please fix that and ask again';
+    }
 
     if ( empty( $res ) ) {
       $res = "Sorry, I couldn't find a short answer for that question. Google it.";

@@ -3,19 +3,58 @@
     <title>.: EREBUS :.</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-      function submitAndClear(){
-        if ($('#speechinput').val() != "") {
-          $('#erebusForm').submit();
-          $('#speechinput').val("")
+      $(function() {
+        // fix up vendor prefixing
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+        // get context and elements
+        var context = new AudioContext(),
+            $form   = $('#erebusForm'),
+            $input  = $form.find('#speechinput');
+
+        // submit query
+        function submitQuery() {
+          if ( !$input.val() ) { return false; }
+
+          // build request
+          var url     = '/' + $form.attr('action') + '?' + $form.serialize(),
+              request = new XMLHttpRequest();
+
+          // reset form value
+          $input.val( '' );
+
+          // open request
+          request.open('GET', url, true);
+          request.responseType = 'arraybuffer';
+
+          // setup to decode asynchronously
+          request.onload = function() {
+            context.decodeAudioData( request.response, function( buffer ) {
+              var source = context.createBufferSource();
+
+              source.buffer = buffer;
+              source.connect(context.destination);
+
+              source.start(0);
+            }, function( e ) {
+              console.error( e );
+            });
+          }
+
+          // submit query
+          request.send();
         }
-      }
+
+        // listen for queries
+        $input.on( 'focus', function() {
+          submitQuery();
+        });
+      });
     </script>
   </head>
   <body>
     <form method="get" name="erebusForm" id="erebusForm" action="{{ action }}" target="voiceframe">
-      <input name="speechinput" id="speechinput" type="text" onFocus="submitAndClear(this);" style="width:20px;" x-webkit-speech />
-      <!--input type="submit" value="ASK" /-->
+      <input name="speechinput" id="speechinput" type="text" style="width:20px;" x-webkit-speech />
     </form>
-    <iframe width="0px" height="0px" style="border:0px;" src="about:none" name="voiceframe"></iframe>
   </body>
 </html>

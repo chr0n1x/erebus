@@ -10,41 +10,38 @@ use SilexView\BaseView;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Process extends BaseView {
+class Process extends BaseView
+{
+    const PARAM = 'speechinput';
 
-  const PARAM = 'speechinput';
-
-  /**
+    /**
    * {@inheritDoc}
    */
-  function get( Request $req, Application $app ) {
+    public function get(Request $req, Application $app)
+    {
+        $text = $req->get(self::PARAM);
 
-    $text = $req->get( self::PARAM );
+        $app['monolog']->addInfo("Query: [ {$text} ]");
 
-    $app['monolog']->addInfo( "Query: [ {$text} ]" );
+        try {
+            $res = (new Wolfram($app['wolfram']))->ask($text);
+        } catch (\InvalidArgumentException $e) {
+            $res = 'I do not have a valid wolfram configuration, please fix that and ask again';
+        }
 
-    try {
-      $res = ( new Wolfram( $app['wolfram'] ) )->ask( $text );
-    }
-    catch( \InvalidArgumentException $e ) {
-      $res = 'I do not have a valid wolfram configuration, please fix that and ask again';
-    }
+        if (empty($res)) {
+            $res = "Sorry, I couldn't find a short answer for that question. Google it.";
+        }
 
-    if ( empty( $res ) ) {
-      $res = "Sorry, I couldn't find a short answer for that question. Google it.";
-    }
+        $app['monolog']->addInfo("Response: [ {$res} ]");
 
-    $app['monolog']->addInfo( "Response: [ {$res} ]" );
+        $audio = (new GoogleTTS())->textToSpeech($res);
 
-    $audio = ( new GoogleTTS )->textToSpeech( $res );
+        $response = new Response($audio, Response::HTTP_OK);
 
-    $response = new Response( $audio, Response::HTTP_OK );
+        $response->headers->set('Content-Type', 'audio/mpeg');
+        $response->headers->set('Cache-Control', 'no-cache');
 
-    $response->headers->set( 'Content-Type', 'audio/mpeg' );
-    $response->headers->set( 'Cache-Control', 'no-cache' );
-
-    return $response;
-
-  } // process
-
-} // Erebus\Controller\V1\Process
+        return $response;
+    } // process
+}

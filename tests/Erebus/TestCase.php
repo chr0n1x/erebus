@@ -5,7 +5,7 @@ namespace Erebus;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
 
-class TestCase extends \PHPUnit_Framework_TestCase {
+abstract class TestCase extends \PHPUnit_Framework_TestCase {
 
   protected $_request,
             $_app;

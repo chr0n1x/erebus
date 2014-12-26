@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="./bootstrap.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -17,7 +16,7 @@
 
   <testsuites>
     <testsuite>
-      <directory suffix=".php">./Erebus/</directory>
+      <directory suffix=".php">./tests/Erebus/</directory>
     </testsuite>
   </testsuites>
 
@@ -27,8 +26,8 @@
 
   <filter>
     <blacklist>
-      <directory>../vendor</directory>
-      <directory>./</directory>
+      <directory>./vendor</directory>
+      <directory>./tests</directory>
     </blacklist>
   </filter>
 

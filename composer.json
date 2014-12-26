@@ -14,15 +14,21 @@
         "silex/silex": "1.1.2",
         "twig/twig": ">=1.2.0",
         "monolog/monolog": "1.7.0",
-        "igorw/config-service-provider": "dev-master#8ccf0f6e9324629720c58fa071e74dbd2501f437",
-        "hoffmann/silex-view": "dev-master#0cbd1591cd2f3598583fc7f69eeea7c0d0ffe3f3"
+        "igorw/config-service-provider": "dev-master#8ccf0f6",
+        "hoffmann/silex-view": "dev-master#0cbd159"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.28"
+        "phpunit/phpunit": "~4.0",
+        "squizlabs/php_codesniffer": "~2.1"
     },
     "autoload": {
         "psr-0": {
             "Erebus": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Erebus": "tests"
         }
     }
 }

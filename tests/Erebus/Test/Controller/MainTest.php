@@ -5,18 +5,16 @@ namespace Erebus\Test\Controller;
 use Erebus\TestCase;
 use Erebus\Controller\Main;
 
-class MainTest extends TestCase {
-
-  /**
+class MainTest extends TestCase
+{
+    /**
    * @test
    */
-  public function contextDataReturnsAction() {
+    public function contextDataReturnsAction()
+    {
+        $data = (new Main())->getContextData($this->_request, $this->_app);
 
-    $data = ( new Main )->getContextData( $this->_request, $this->_app );
-
-    $this->assertInternalType( 'array', $data );
-    $this->assertArrayHasKey( 'action', $data );
-
-  } // contextDataReturnsAction
-
-} // MainTest
+        $this->assertInternalType('array', $data);
+        $this->assertArrayHasKey('action', $data);
+    } // contextDataReturnsAction
+}

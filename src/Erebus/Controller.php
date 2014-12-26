@@ -19,7 +19,7 @@ class Controller extends TemplateView
     public function getContextData($request, $app)
     {
         throw new \RuntimeException(
-          __FUNCTION__.' must be implemented & must return an array!'
+            __FUNCTION__.' must be implemented & must return an array!'
         );
     }
 }

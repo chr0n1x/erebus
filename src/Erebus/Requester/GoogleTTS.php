@@ -14,8 +14,8 @@ class GoogleTTS extends Requester
     protected $_baseUrl = 'translate.google.com';
 
     /**
-   * @array
-   */
+     * @array
+     */
     protected $_queryParams = array(
       'tl'      => 'en',
       'q'       => '',
@@ -29,5 +29,5 @@ class GoogleTTS extends Requester
         $url = $this->_buildRequestUrl(self::TRANSLATE_EP);
 
         return file_get_contents($url);
-    } // textToSpeech
+    }
 }

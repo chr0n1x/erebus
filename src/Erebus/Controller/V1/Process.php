@@ -15,8 +15,8 @@ class Process extends BaseView
     const PARAM = 'speechinput';
 
     /**
-   * {@inheritDoc}
-   */
+     * {@inheritDoc}
+     */
     public function get(Request $req, Application $app)
     {
         $text = $req->get(self::PARAM);
@@ -43,5 +43,5 @@ class Process extends BaseView
         $response->headers->set('Cache-Control', 'no-cache');
 
         return $response;
-    } // process
+    }
 }

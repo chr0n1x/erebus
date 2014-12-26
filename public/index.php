@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('UTC');
 
 require_once __DIR__.'/../bootstrap/constants.php';
 require_once __DIR__.'/../vendor/autoload.php';
@@ -18,5 +19,6 @@ foreach ($configs as $file) {
 }
 
 $app->get('/', Erebus\Controller\Main::asView());
-$app->get('/v1/process', Erebus\Controller\V1\Process::asView());
+$app->get('/v1/ask', Erebus\Controller\V1\Ask::asView());
+$app->get('/v1/audio', Erebus\Controller\V1\Audio::asView());
 $app->run();

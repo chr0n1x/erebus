@@ -6,7 +6,7 @@ use Erebus\Controller;
 
 class Main extends Controller
 {
-    const ACTION = 'v1/process';
+    const ACTION = 'v1/ask';
 
     /**
      * {@inheritDoc}
